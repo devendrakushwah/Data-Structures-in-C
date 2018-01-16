@@ -4,13 +4,27 @@ int arr[SIZE];
 int top=-1;
 void push()
 {
-    top++;
-    scanf("%d",&arr[top]);
+    if(top<SIZE)
+    {
+        top++;
+        scanf("%d",&arr[top]);
+    }
+    else
+    {
+        printf("StackOverFlow\n");
+    }
 }
 void pop()
 {
-    arr[top]=0;
-    top--;
+    if(top==-1)
+    {
+        printf("UnderFlow\n");
+    }
+    else
+    {
+        arr[top]=0;
+        top--;
+    }
 }
 void display()
 {
